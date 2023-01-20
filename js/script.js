@@ -124,7 +124,7 @@ const clickShowMoreLess = function () {
         await main(atualVila)
         btnShowMore.style.display ='block'
         btnShowLess.style.display ='block'
-        memberImage.src =`image/${atualVila}_image.png`
+        memberImage.src =`image/${atualVila}-image.png`
         memberImage.style.filter = `drop-shadow(1rem 0 0.8rem var(--${atualVila}))`;
         
       })

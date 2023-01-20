@@ -1,6 +1,6 @@
 const membersPlace = document.querySelector('.midContent')
 const btnVillage = document.querySelectorAll('.villages img')
-
+const bigClanMenber = document.querySelector('.clanMemberLeft')
 const btnShowMore = document.querySelector('.btnShowMore')
 
 
@@ -93,18 +93,19 @@ const clickShowMore = function () {
 
     btnVillage.forEach((vila) => {
       const atualVila = vila.alt
-      vila.addEventListener('click', ()=>{
+      vila.addEventListener('click',async ()=>{
         serchMore = 9
         zero = 0
         nameVila = atualVila
         
         
-  
-       
         
         
-        main(atualVila)
-         
+        
+        await main(atualVila)
+        
+        bigClanMenber.src =`image/${atualVila}_image.png`
+        bigClanMenber.style.filter = `drop-shadow(1rem 0 0.8rem var(--${atualVila}))`;
         
       })
          

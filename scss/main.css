@@ -1,3 +1,14 @@
+:root {
+  --leaf:rgb(80, 212, 80) ;
+  --cloud:rgb(78, 5, 197) ;
+  --mist:rgb(0, 232, 248) ;
+  --rain:rgb(58, 160, 228) ;
+  --sand:rgb(223, 173, 8) ;
+  --sound:rgb(240, 123, 158) ;
+  --rock:rgb(192, 127, 5) ;
+  --waterfall:rgba(0, 255, 200, 0.973) ;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,11 +37,23 @@ body .logo {
   margin: 2rem;
 }
 body main {
+  z-index: 2;
   display: flex;
   height: 100vh;
 }
 body main .left {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70%;
+}
+body main .left .clanMemberLeft {
+  max-height: 79rem;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  width: 100%;
 }
 body main .right {
   display: flex;

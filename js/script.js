@@ -1,7 +1,9 @@
 const membersPlace = document.querySelector('.midContent')
 const btnVillage = document.querySelectorAll('.villages img')
-const bigClanMenber = document.querySelector('.clanMemberLeft')
+const clanMemberDiv = document.querySelector('.left')
+
 const btnShowMore = document.querySelector('.btnShowMore')
+const btnShowLess = document.querySelector('.btnShowLess')
 
 
 
@@ -75,15 +77,27 @@ function showVilageMembers(naruto){
 
   
  
-const clickShowMore = function () {
+const clickShowMoreLess = function () {
   
   btnShowMore.addEventListener( 'click', async ()=>{
     
     serchMore +=  + 9
     zero += + 9
-    console.log(serchMore)
+    
     
     main(nameVila)
+  })
+  btnShowLess.addEventListener( 'click', async ()=>{
+    if(serchMore == 9 && zero == 0 ){
+
+    }else{
+
+      serchMore +=  - 9
+      zero += - 9
+      main(nameVila)
+    }
+   
+    
   })
 }
 
@@ -94,18 +108,24 @@ const clickShowMore = function () {
     btnVillage.forEach((vila) => {
       const atualVila = vila.alt
       vila.addEventListener('click',async ()=>{
+
+
         serchMore = 9
         zero = 0
         nameVila = atualVila
         
-        
-        
-        
-        
+        clanMemberDiv.innerHTML= ''
+
+        const memberImage = document.createElement('img')
+        memberImage.classList.add('clanMemberLeft')
+        memberImage.src = ' '
+        clanMemberDiv.appendChild(memberImage)
+
         await main(atualVila)
-        
-        bigClanMenber.src =`image/${atualVila}_image.png`
-        bigClanMenber.style.filter = `drop-shadow(1rem 0 0.8rem var(--${atualVila}))`;
+        btnShowMore.style.display ='block'
+        btnShowLess.style.display ='block'
+        memberImage.src =`image/${atualVila}_image.png`
+        memberImage.style.filter = `drop-shadow(1rem 0 0.8rem var(--${atualVila}))`;
         
       })
          
@@ -113,5 +133,5 @@ const clickShowMore = function () {
     
   }
   vilageButtonPress()
-  clickShowMore()
+  clickShowMoreLess()
   

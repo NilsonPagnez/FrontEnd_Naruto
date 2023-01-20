@@ -8,3 +8,11 @@
     --rock:rgb(192, 127, 5) ;
     --waterfall:rgba(0, 255, 200, 0.973) ;
 }
+
+@keyframes opacify {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}

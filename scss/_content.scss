@@ -18,10 +18,11 @@ body{
             justify-content: center;
             width: 70%;
             .clanMemberLeft{
-                
+                animation: opacify 0.4s ease;
                 max-height: 79rem;
                 max-width: fit-content;
                 width: 100%;
+                
             }
         }
         .right{
@@ -67,6 +68,11 @@ body{
                                 height: fit-content;
                                 filter: invert(100%);
                                 cursor: pointer;
+                                transition: 0.3s ease;
+                                &:hover{
+                                    scale: 1.1;
+                                    transition: 0.3s ease;
+                                }
                             }
                         }
 
@@ -85,7 +91,23 @@ body{
                             flex-direction: column;
                             align-items: center;
                             img{
+                                
                                max-width: 80%;
+                               max-height: 12rem;
+                               margin-bottom: 4%;
+                               animation: opacify 0.4s ease;
+                            }
+                            p{
+                                font-size: 1.2rem;
+                                
+                            }
+                            @media (max-width:1400px) {
+                                img{
+                                    max-width: 65%;
+                                }
+                                p{
+                                    font-size: 1rem;
+                                }
                             }
                         }
                     }
@@ -96,8 +118,16 @@ body{
                         align-items: center;
                         justify-content: center;
                         button{
+                            display: none;
                             height: fit-content;
-
+                            cursor: pointer;
+                            padding: 5% 10%; 
+                            transition: 0.3s ease;
+                            font-size: 1.4rem;
+                            &:hover{
+                                scale: 1.5;
+                                transition: 0.3s ease;
+                            }
                         }
                     }
                 }

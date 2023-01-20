@@ -9,12 +9,34 @@
   --waterfall:rgba(0, 255, 200, 0.973) ;
 }
 
+@-webkit-keyframes opacify {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacify {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@font-face {
+  font-family: njnNaruto;
+  src: url(../njnaruto.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: njnNaruto, "Times New Roman", Times, serif;
 }
 
 html {
@@ -23,6 +45,10 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
+}
+
+button {
+  all: unset;
 }
 
 body {
@@ -49,6 +75,8 @@ body main .left {
   width: 70%;
 }
 body main .left .clanMemberLeft {
+  -webkit-animation: opacify 0.4s ease;
+          animation: opacify 0.4s ease;
   max-height: 79rem;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -98,6 +126,11 @@ body main .right .conteudoPergaminho .sobrePergaminho .topContent .villages img 
   height: fit-content;
   filter: invert(100%);
   cursor: pointer;
+  transition: 0.3s ease;
+}
+body main .right .conteudoPergaminho .sobrePergaminho .topContent .villages img:hover {
+  scale: 1.1;
+  transition: 0.3s ease;
 }
 body main .right .conteudoPergaminho .sobrePergaminho .midContent {
   display: grid;
@@ -115,6 +148,21 @@ body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo {
 }
 body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo img {
   max-width: 80%;
+  max-height: 12rem;
+  margin-bottom: 4%;
+  -webkit-animation: opacify 0.4s ease;
+          animation: opacify 0.4s ease;
+}
+body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
+  font-size: 1.2rem;
+}
+@media (max-width: 1400px) {
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo img {
+    max-width: 65%;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
+    font-size: 1rem;
+  }
 }
 body main .right .conteudoPergaminho .sobrePergaminho .downContent {
   max-height: 13%;
@@ -124,7 +172,16 @@ body main .right .conteudoPergaminho .sobrePergaminho .downContent {
   justify-content: center;
 }
 body main .right .conteudoPergaminho .sobrePergaminho .downContent button {
+  display: none;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  cursor: pointer;
+  padding: 5% 10%;
+  transition: 0.3s ease;
+  font-size: 1.4rem;
+}
+body main .right .conteudoPergaminho .sobrePergaminho .downContent button:hover {
+  scale: 1.5;
+  transition: 0.3s ease;
 }/*# sourceMappingURL=main.css.map */

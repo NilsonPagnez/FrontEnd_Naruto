@@ -1,9 +1,16 @@
+@font-face {
+    font-family: njnNaruto;
+    src: url(../njnaruto.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: njnNaruto, 'Times New Roman', Times, serif;
+    
     
 }
 html{
@@ -12,4 +19,8 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
+}
+
+button{
+    all: unset;
 }

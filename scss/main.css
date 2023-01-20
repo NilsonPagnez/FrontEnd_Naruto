@@ -156,14 +156,6 @@ body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo im
 body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
   font-size: 1.2rem;
 }
-@media (max-width: 1400px) {
-  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo img {
-    max-width: 65%;
-  }
-  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
-    font-size: 1rem;
-  }
-}
 body main .right .conteudoPergaminho .sobrePergaminho .downContent {
   max-height: 13%;
   height: 100%;
@@ -184,4 +176,33 @@ body main .right .conteudoPergaminho .sobrePergaminho .downContent button {
 body main .right .conteudoPergaminho .sobrePergaminho .downContent button:hover {
   scale: 1.5;
   transition: 0.3s ease;
+}
+@media (max-width: 1400px) {
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo img {
+    max-width: 60%;
+    max-height: 10rem;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  body main .left {
+    width: 50%;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo img {
+    max-width: 60%;
+    max-height: 8rem;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 991px) {
+  body .logo {
+    right: 35%;
+  }
+  body main .left {
+    width: 0%;
+  }
 }/*# sourceMappingURL=main.css.map */

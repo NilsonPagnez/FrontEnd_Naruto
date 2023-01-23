@@ -141,6 +141,25 @@ body main .right .conteudoPergaminho .sobrePergaminho .midContent {
   height: 100%;
   padding: 0 16%;
 }
+body main .right .conteudoPergaminho .sobrePergaminho .midContent .chooseMessageDiv {
+  display: subgrid;
+  grid-column: 2/2;
+}
+body main .right .conteudoPergaminho .sobrePergaminho .midContent .chooseMessageDiv span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 4rem;
+  gap: 3rem;
+  text-align: center;
+}
+body main .right .conteudoPergaminho .sobrePergaminho .midContent .chooseMessageDiv span img {
+  height: 10rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo {
   display: flex;
   flex-direction: column;
@@ -204,5 +223,20 @@ body main .right .conteudoPergaminho .sobrePergaminho .downContent button:hover 
   }
   body main .left {
     width: 0%;
+  }
+}
+@media (max-width: 680px) {
+  body main .right .conteudoPergaminho .sobrePergaminho .topContent .villages img {
+    max-width: 10%;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo img {
+    max-width: 80%;
+    max-height: 8rem;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .midContent .memberInfo p {
+    font-size: 0px;
+  }
+  body main .right .conteudoPergaminho .sobrePergaminho .downContent button {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=main.css.map */

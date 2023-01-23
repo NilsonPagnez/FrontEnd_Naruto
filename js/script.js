@@ -2,6 +2,8 @@ const membersPlace = document.querySelector('.midContent')
 const btnVillage = document.querySelectorAll('.villages img')
 const clanMemberDiv = document.querySelector('.left')
 
+const imageLeft = document.querySelector('.clanMemberLeft')
+
 const btnShowMore = document.querySelector('.btnShowMore')
 const btnShowLess = document.querySelector('.btnShowLess')
 
@@ -136,14 +138,21 @@ const clickShowMoreLess = function () {
 
         const memberImage = document.createElement('img')
         memberImage.classList.add('clanMemberLeft')
-        memberImage.src = ' '
+        memberImage.src = ''
+        memberImage.style.display = 'none'
         clanMemberDiv.appendChild(memberImage)
+        
 
         await main(atualVila, page)
         btnShowMore.style.display ='block'
         btnShowLess.style.display ='block'
         memberImage.src =`image/${atualVila}-image.png`
-        memberImage.style.filter = `drop-shadow(1rem 0 0.8rem var(--${atualVila}))`;
+        memberImage.style.filter = `drop-shadow(1rem 0 0.8rem var(--${atualVila}))`
+
+        setTimeout(() =>{
+          memberImage.style.display = 'block'
+        }, 500)
+
         
       })
          

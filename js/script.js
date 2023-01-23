@@ -8,9 +8,13 @@ const btnShowLess = document.querySelector('.btnShowLess')
 
 
 let serchMore = 9
-let zero = 0
+let searchMoreLimiter = 0
+
+let page = 1
 
 let nameVila 
+
+
 async function requestApi(querry) {
     let response = await fetch (`https://narutoql.up.railway.app/graphql/?query=${querry}`)
 
@@ -19,9 +23,9 @@ async function requestApi(querry) {
 }
 
 
-function main(vila) {
+function main(vila , pagina = 1) {
     const naruto = `{
-        characters(filter: {village: "${vila}"})  {
+        characters(filter: {village: "${vila}"} page: ${pagina})  {
          info{
            count
          }
@@ -45,10 +49,9 @@ function showVilageMembers(naruto){
     membersPlace.innerHTML = ''
 
     allCharacter = naruto.characters.results
-    console.log(naruto)
     
     allCharacter.forEach((member, index) => {
-        index = index < serchMore && index >= zero
+        index = index < serchMore && index >= searchMoreLimiter
         if(index == true){
           
           const memberInfo = document.createElement('div')
@@ -82,20 +85,34 @@ const clickShowMoreLess = function () {
   btnShowMore.addEventListener( 'click', async ()=>{
     
     serchMore +=  + 9
-    zero += + 9
+    searchMoreLimiter += + 9
     
-    
-    main(nameVila)
+    console.log(serchMore)
+    if(serchMore == 54){
+      page += 1
+      serchMore = 9
+      searchMoreLimiter = 0
+     
+    }
+    main(nameVila, page)
   })
   btnShowLess.addEventListener( 'click', async ()=>{
-    if(serchMore == 9 && zero == 0 ){
+    if(serchMore == 9 && searchMoreLimiter == 0 && page !==1){
+      
+      serchMore = 45
+      searchMoreLimiter = 36
+      page += -1
+      main(nameVila, page)
+      
+    }else if(serchMore == 9 && searchMoreLimiter == 0 && page ==1){
 
     }else{
 
       serchMore +=  - 9
-      zero += - 9
-      main(nameVila)
+      searchMoreLimiter += - 9
+      main(nameVila, page)
     }
+    
    
     
   })
@@ -108,10 +125,11 @@ const clickShowMoreLess = function () {
     btnVillage.forEach((vila) => {
       const atualVila = vila.alt
       vila.addEventListener('click',async ()=>{
-
-
+        
+        page = 1
+        
         serchMore = 9
-        zero = 0
+        searchMoreLimiter = 0
         nameVila = atualVila
         
         clanMemberDiv.innerHTML= ''
@@ -121,7 +139,7 @@ const clickShowMoreLess = function () {
         memberImage.src = ' '
         clanMemberDiv.appendChild(memberImage)
 
-        await main(atualVila)
+        await main(atualVila, page)
         btnShowMore.style.display ='block'
         btnShowLess.style.display ='block'
         memberImage.src =`image/${atualVila}-image.png`
@@ -134,4 +152,4 @@ const clickShowMoreLess = function () {
   }
   vilageButtonPress()
   clickShowMoreLess()
-  
+ 
